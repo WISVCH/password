@@ -9,11 +9,10 @@
           rel="stylesheet" media="screen"/>
     <script src="https://cdn.jsdelivr.net/webjars/jquery/2.2.4/jquery.min.js"
             th:src="@{/webjars/jquery/2.2.4/jquery.min.js}"></script>
-    <script src="https://cdn.jsdelivr.net/webjars/org.webjars.bower/wisvch-bootstrap-theme/dist/0.0.3/js/bootstrap.min.js"
+    <script src="https://cdn.jsdelivr.net/webjars/org.webjars.bower/wisvch-bootstrap-theme/0.0.3/dist/js/bootstrap.min.js"
             th:src="@{/webjars/wisvch-bootstrap-theme/0.0.3/dist/js/bootstrap.min.js}"></script>
 </head>
 <body>
-<!-- Header -->
 <div>
     <div class="navbar navbar-inverse navbar-static-top">
         <div class="container">
@@ -24,6 +23,7 @@
     </div>
 </div>
 <div class="container">
+    <!--/*@thymesVar id="message" type="java.lang.String"*/-->
     <div class="alert alert-success" role="alert" th:unless="${#strings.isEmpty(message)}">
         <p th:text="#{${message}}">Success message</p>
     </div>

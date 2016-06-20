@@ -33,14 +33,14 @@ public class ModifyPasswordController {
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String getEvents(Model model, @ModelAttribute String message) {
+    public String form(Model model, @ModelAttribute String message) {
         model.addAttribute("modifyPasswordRequest", new ModifyPasswordRequest());
         return "form";
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
-    public String createEvent(@Valid @ModelAttribute ModifyPasswordRequest modifyPasswordRequest,
-                              BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+    public String modifyPassword(@Valid @ModelAttribute ModifyPasswordRequest modifyPasswordRequest,
+                                 BindingResult bindingResult, RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()) {
             return "form";
         }
