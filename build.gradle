@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '1.3.5.RELEASE'
+        springBootVersion = '1.3.6.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -23,8 +23,7 @@ jar {
     }
     archiveName = "${baseName}.${extension}"
     manifest {
-        attributes("Implementation-Title": "Password",
-                "Implementation-Version": version)
+        attributes("Implementation-Title": "Password", "Implementation-Version": version)
     }
 }
 
