@@ -27,6 +27,10 @@ jar {
     }
 }
 
+springBoot {
+    executable = true
+}
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
