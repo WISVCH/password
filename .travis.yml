@@ -6,7 +6,14 @@ jdk:
 - oraclejdk8
 script:
 - "./gradlew build"
-- docker build --no-cache --pull .
+- docker build --no-cache --pull -t wisvch/password:$TRAVIS_BUILD_NUMBER .
+after_success:
+- if [ "$TRAVIS_BRANCH" == "master" ]; then
+  docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+  docker tag wisvch/password:$TRAVIS_BUILD_NUMBER wisvch/password:latest;
+  docker push wisvch/password:$TRAVIS_BUILD_NUMBER;
+  docker push wisvch/password:latest;
+  fi
 notifications:
   slack:
     rooms:
